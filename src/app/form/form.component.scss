@@ -1,0 +1,108 @@
+.text-blue{
+    color: rgb(26, 26, 131);
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.terms{
+    background-color: rgb(210, 236, 247);
+    font-size: 12px;
+}
+.text-green{
+    color: rgb(34, 190, 34);
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+  
+input.ng-dirty.ng-valid {
+    border-right: 0;
+    // background-color:rgba(34,190,34,0.1);
+}
+
+.text-1{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+    // background-color:rgba(red,0.1);
+    border-right: 0;
+}
+
+.btnWidth{
+    width: 255px;
+    border-radius: 0%;
+    font-weight: bold;
+}
+
+.bg-aqua{
+    background-color: rgb(39, 118, 223);
+}
+
+.border-aqua{
+    border: 1px solid rgb(39, 118, 223);
+}
+
+////////
+input[type='radio']:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: -4px;
+    left: -2px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input[type='radio']:checked:after {
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    top: -4px;
+    left: -2px;
+    position: relative;
+    background-color:rgb(34, 190, 34);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='checkbox']:after {
+    width: 20px;
+    height: 20px;
+    /* border-radius: 15px; */
+    top: -4px;
+    left: -2px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+input[type='checkbox']:checked:after {
+    width: 20px;
+    height: 20px;
+    /* border-radius: 15px; */
+    top: -4px;
+    left: -2px;
+    position: relative;
+    background-color:rgb(34, 190, 34);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+

@@ -1,0 +1,45 @@
+.text-blue{
+    color: rgb(26, 26, 131);
+}
+
+label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.terms{
+    background-color: rgb(210, 236, 247);
+    font-size: 12px;
+}
+.text-green{
+    color: rgb(34, 190, 34);
+}
+
+input:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+  
+input.ng-dirty.ng-valid {
+    border-right: 0;
+    // background-color:rgba(34,190,34,0.1);
+}
+
+.text-1{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+    // background-color:rgba(red,0.1);
+    border-right: 0;
+}
+
+input.ng-touched.ng-valid {
+    border: 1px solid #42A948; 
+    border-right: 0;
+}
+
+

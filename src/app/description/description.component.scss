@@ -1,0 +1,30 @@
+.back{
+    background-color: #f7f6f4;
+    height: 100%;
+}
+
+.text-blue{
+    color: rgb(26, 26, 131);
+}
+
+.text-1{
+    background-color: rgb(39, 118, 223);
+    width: fit-content;
+    padding: 2px 5px;
+}
+
+.text-2{
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(85, 84, 84);
+}
+
+hr{
+    height: 2px;
+}
+
+@media only screen and (max-width:576px){
+    .hide{
+        display: none;
+    }
+}

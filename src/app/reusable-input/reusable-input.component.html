@@ -1,0 +1,40 @@
+<div>
+        <label class="form-label text-uppercase"> {{label}}*
+            <ng-container *ngIf="popup">
+                <i class="bi bi-info-circle" type="button" data-bs-toggle="tooltip" data-bs-placement="right" [title]="popup"></i>
+            </ng-container>
+        </label>
+        <div class="input-group mb-3">
+            <ng-container *ngIf="!phonemask">
+                <input [formControl]="control" 
+                [type]="typeInput" 
+                class="form-control"
+                [placeholder]="label"
+                [readonly]="read"
+                >
+            </ng-container>
+            <ng-container *ngIf="phonemask">
+                <input [formControl]="control" 
+                [type]="typeInput" 
+                class="form-control"
+                [placeholder]="label"
+                [readonly]="read"
+                [textMask]="{mask: phonemask}"
+                >
+            </ng-container>
+            <span *ngIf="control.valid" class="input-group-text bg-transparent border-start-0 border-success" 
+            id="basic-addon1">
+                 <i class="bi bi-check-circle text-green"></i>
+            </span>
+            <span *ngIf="control. invalid && (control.dirty || control.touched)" class="input-group-text border-danger bg-transparent border-start-0" id="basic-addon1"><i class="bi bi-exclamation-triangle-fill text-danger"></i></span>
+        </div>
+    
+  <ng-container *ngIf="control. invalid && (control.dirty || control.touched)">
+        <div *ngIf="control.errors?.['required']"  class="text-danger mb-3 fw-bold">
+            Please enter {{label | titlecase}} 
+        </div>
+        <div *ngIf="control.errors?.['pattern']"  class="text-danger mb-3 fw-bold">
+            Please enter valid {{label | titlecase}} 
+        </div>
+  </ng-container>
+</div>

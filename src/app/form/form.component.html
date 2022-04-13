@@ -1,0 +1,131 @@
+<div class="mt-2 px-4 mb-5">
+    <h4 class="text-blue d-none d-sm-block">Apply in minutes. Get a decision in seconds.</h4>
+    <div class="mt-4">
+        <form (ngSubmit)="submitForm()" [formGroup]="businessForm" #formRef="ngForm">
+            <div>
+                <app-reusable-input [control]="$any(emailadd)" [label]="'Email Address'" [typeInput]="'email'" [popup]="email"></app-reusable-input>
+            </div>
+            <h5 class="text-uppercase fw-normal text-blue mt-4 mb-3">Enter your business information</h5>
+            <div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <app-reusable-input [control]="$any(legalName)" [label]="'Legal Business Name'" [typeInput]="'text'"></app-reusable-input>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <app-reusable-input [control]="$any(busscardName)" [label]="'Business Card Name'" [typeInput]="'text'"></app-reusable-input>
+                    </div>
+                </div>
+            </div>
+            <div formGroupName="addresses">
+                <div formGroupName="bussAddress">
+                    <div>
+                        <app-reusable-input [control]="$any(Add1)" [label]="'Business address line 1'" [typeInput]="'text'"></app-reusable-input>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <app-reusable-input [control]="$any(Add2)" [label]="'Business address line 2'" [typeInput]="'text'"></app-reusable-input>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <app-reusable-input [control]="$any(busszipCode)" [label]="'Zip Code'" [typeInput]="'number'"></app-reusable-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <app-reusable-input [control]="$any(phone)" [label]="'Business Phone Number'" [typeInput]="'text'" [popup]="phoneNo" [phonemask]="phoneMask"></app-reusable-input>
+            </div>
+            <hr class="my-4">
+            <h5 class="text-uppercase fw-normal text-blue mt-4 mb-3">Enter your personal information</h5>
+            <div>
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <app-reusable-input [control]="$any(firstName)" [label]="'First Name'" [typeInput]="'text'"></app-reusable-input>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <app-reusable-input [control]="$any(lastName)" [label]="'Last Name'" [typeInput]="'text'"></app-reusable-input>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <app-reusable-input [control]="$any(cardName)" [label]="'Name on card'" [typeInput]="'text'"></app-reusable-input>
+            </div>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input border-end" type="checkbox" value="sameAdd" id="check" formControlName="sameAdd">
+                    <label class="form-check-label fw-normal" for="check"> My home address is same as my business address </label>
+                </div>
+            </div>
+            <div formGroupName="addresses">
+                <div formGroupName="homeAddress">
+                    <div>
+                        <app-reusable-input [control]="$any(homeAdd1)" [label]="'Home address line 1'" [typeInput]="'text'" [read]="sa.readOnly"></app-reusable-input>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <app-reusable-input [control]="$any(homeAdd2)" [label]="'Home address line 2'" [typeInput]="'text'" [read]="sa.readOnly"></app-reusable-input>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <app-reusable-input [control]="$any(zipCode)" [label]="'Zip code'" [typeInput]="'number'" [read]="sa.readOnly"></app-reusable-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h5 class="text-uppercase fw-normal text-blue">Tell us where to send your bill</h5>
+            <div class="mt-4">
+                <div class="mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioBtn" value="business" id="radio1" formControlName="radioBtn">
+                        <label class="form-check-label" for="radio1">Business</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radioBtn" value="home" id="radio2" formControlName="radioBtn">
+                        <label class="form-check-label" for="radio2">Home</label>
+                    </div>
+                    <div *ngIf="radioBtn. invalid && (radioBtn.dirty || radioBtn.touched)"
+                        class="text-danger mb-3 fw-bold">
+                        <div *ngIf="radioBtn.errors?.['required']">
+                            Please select a type
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <p><small class="opacity-75">*Required information</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <p class="text-center fs-5 mb-0">Terms and Conditions</p>
+                <hr class="mt-0">
+                <p class="text-center text-uppercase text-1">
+                    please scroll down to read important information about rates,fees,and other cost
+                    information before submitting your application
+                </p>
+                <div class="mt-4">
+                    <p class="terms p-2">
+                        By submitting this application, I certify that I have read, met, and agreed to all of the terms,
+                        consitions, and
+                        disclosures as outlined below, which contain fee and other important cost information.
+                        I certify that I am an Authorizing Officer of the Company, and have provided current,complete
+                        and accurate information. I understand that additional information may be
+                        required to complete my application.
+                    </p>
+                </div>
+
+                <div *ngIf="registrationError.error">
+                    <p class="text-center text-danger fw-bold text-capitalize">{{registrationError.errorMessage}}</p>
+                </div>
+
+                <div class="mt-5">
+                    <button class="btn bg-aqua d-block mx-auto btnWidth text-white" type="submit"><i class="bi bi-lock-fill"></i> Submit Application</button>
+                </div>
+            </div>
+        </form>
+        <button class="btn border-aqua d-block mx-auto mt-3 btnWidth text-blue">Save & Apply Later</button>
+    </div>
+</div>
